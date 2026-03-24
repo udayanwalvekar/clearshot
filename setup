@@ -156,7 +156,13 @@ echo -e "   ${GREEN}✓${RESET}  local state         ${DIM}~/.clearshot/${RESET}
 
 # 2. skill registration
 mkdir -p "$HOME/.claude/skills"
-if [ -L "$SKILL_DIR" ]; then
+RESOLVED_SCRIPT_DIR="$(cd "$SCRIPT_DIR" && pwd -P)"
+RESOLVED_SKILL_DIR="$(cd "$SKILL_DIR" 2>/dev/null && pwd -P || echo "$SKILL_DIR")"
+if [ "$RESOLVED_SCRIPT_DIR" = "$RESOLVED_SKILL_DIR" ]; then
+  # Already running from the skill directory (e.g. npx or install.sh cloned directly here)
+  pause 0.2
+  echo -e "   ${GREEN}✓${RESET}  skill registered    ${DIM}already in place${RESET}"
+elif [ -L "$SKILL_DIR" ]; then
   pause 0.2
   echo -e "   ${GREEN}✓${RESET}  skill registered    ${DIM}already linked${RESET}"
 elif [ -d "$SKILL_DIR" ]; then
