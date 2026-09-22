@@ -10,8 +10,8 @@ Run this bash block first, before any analysis:
 ```bash
 # ─── Find skill directory (works from any install path) ───────
 _CS_DIR=""
-for _d in "$HOME/.claude/skills/clearshot" "$HOME/.agents/skills/clearshot"; do
-  [ -f "$_d/SKILL.md" ] && _CS_DIR="$_d" && break
+for _d in ".claude/skills/clearshot" ".agents/skills/clearshot" "$HOME/.claude/skills/clearshot" "$HOME/.agents/skills/clearshot"; do
+  [ -f "$_d/SKILL.md" ] && _CS_DIR="$(cd "$_d" && pwd)" && break
 done
 # fallback: search
 [ -z "$_CS_DIR" ] && _CS_DIR="$(cd "$(dirname "$(find "$HOME/.claude" "$HOME/.agents" -name SKILL.md -path '*/clearshot/*' -print -quit 2>/dev/null)")" 2>/dev/null && pwd || echo "")"
@@ -36,7 +36,7 @@ fi
 
 # ─── Version check (only if user opted into updates) ─────────
 # No network calls until config exists and user has chosen
-if [ -n "$_CS_VER" ] && [ "$_CS_FIRST_RUN" = "no" ]; then
+if [ -n "$_CS_VER" ] && [ "$_CS_FIRST_RUN" = "no" ] && [ -d "$_CS_DIR/.git" ]; then
   _CS_CACHE="$_CS_STATE/last-update-check"
   _STALE=""
   [ -f "$_CS_CACHE" ] && _STALE=$(find "$_CS_CACHE" -mmin +60 2>/dev/null || true)
