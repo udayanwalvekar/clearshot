@@ -34,7 +34,11 @@ rm -rf ~/.claude/skills/clearshot ~/.clearshot && git clone https://github.com/u
 
 if clearshot stopped working or the skill won't load, run the same command above.
 
-activates automatically when you share a UI screenshot. first time it runs, it asks two questions (update preference + telemetry) and you're done.
+activates automatically when you share a UI screenshot.
+
+### update
+
+run the reinstall command above. it works for every install type.
 
 ## what it does
 
@@ -54,20 +58,11 @@ levels 1+2 always run. level 3 escalates when you're implementing from the scree
 
 ## it knows when to shut up
 
-screenshot of a meme? stays quiet. architecture diagram? stays quiet. photo of your lunch? definitely stays quiet. only activates on UI screenshots when you're building or critiquing frontend.
+screenshot of a meme? stays quiet. architecture diagram? stays quiet. photo of your lunch? definitely stays quiet. only activates on UI screenshots when you're building or critiquing frontend. a screenshot shared for what it says (a slack thread, an error) gets a normal answer.
 
 ## privacy
 
-everything runs locally. no screenshots or code ever leave your machine.
-
-telemetry is opt-in — you choose during first run:
-
-| mode | what's sent |
-|------|------------|
-| anonymous | usage events + hashed device ID (no PII) |
-| off | nothing |
-
-no network calls happen until you explicitly opt in.
+everything runs locally. the skill itself makes no network calls and sends no telemetry. no screenshots or code ever leave your machine.
 
 ## research
 

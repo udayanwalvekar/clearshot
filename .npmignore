@@ -2,11 +2,6 @@ convex/
 setup
 install.sh
 SKILL.md
-config.sh
-bin/picker.sh
-bin/onboarding.sh
-bin/telemetry-setup.sh
-bin/update-prompt.sh
 SCOPE-*.md
 CHANGELOG.md
 .gitignore

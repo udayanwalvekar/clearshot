@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.5.0 (2026-10-04)
+
+- **skill is just the analysis now**: SKILL.md drops the bash preamble and epilogue, version checks, auto-update, telemetry, self-rating, field reports and "did clearshot nail it?" prompts. ~60% fewer words loaded on every screenshot, and no shell commands run before an answer
+- **no telemetry**: the skill itself makes no network calls; setup no longer asks the two onboarding questions or writes `~/.clearshot/`; update by re-running the reinstall command in the README
+- **sharper gate**: a UI screenshot shared only for what it says (a message, an error) gets a normal answer, not a full analysis
+- removed the now-unused `bin/onboarding.sh`, `bin/update-prompt.sh`, `bin/telemetry-setup.sh`, `bin/picker.sh` and `config.sh`
+
 ## v1.4.0 (2026-03-25)
 
 - **install simplification**: git clone is now the primary install method — paste one command into claude code
