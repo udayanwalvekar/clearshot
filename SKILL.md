@@ -9,7 +9,7 @@ When an LLM looks at a screenshot and tries to go directly from pixels to code (
 
 ## Gate
 
-Run the analysis only when the image is a digital interface AND the conversation is about building, debugging, designing or evaluating that UI. Slides, documents and handwritten notes are not interfaces; DevTools or a terminal showing a visible page is.
+Run the analysis only when the image is a digital interface AND the conversation is about building, debugging, designing or evaluating that UI. Slides, documents and handwritten notes are not interfaces; DevTools, terminal UIs and CLI output with UI context are.
 
 - An interface screenshot shared for what it says (a Slack thread, an error message, an admin record): answer the question, no analysis.
 - Not an interface, but the conversation is about building UI ("make a page that feels like this photo"): treat it as inspiration; describe its mood, texture and weight, no structured analysis.

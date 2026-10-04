@@ -38,9 +38,7 @@ activates automatically when you share a UI screenshot.
 
 ### update
 
-```
-git -C ~/.claude/skills/clearshot pull
-```
+run the reinstall command above. it works for every install type.
 
 ## what it does
 
@@ -64,7 +62,7 @@ screenshot of a meme? stays quiet. architecture diagram? stays quiet. photo of y
 
 ## privacy
 
-everything runs locally. clearshot makes no network calls and sends no telemetry. no screenshots or code ever leave your machine.
+everything runs locally. the skill itself makes no network calls and sends no telemetry. no screenshots or code ever leave your machine.
 
 ## research
 
